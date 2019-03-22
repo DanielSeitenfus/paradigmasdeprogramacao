@@ -1,3 +1,4 @@
+import Data.Char 
 --1
 isVowel :: Char -> Bool
 isVowel letra = if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') then True else False
@@ -35,4 +36,20 @@ codifica :: String -> String
 codifica palavra = map (\c -> if c /= ' ' then '-' else c) palavra
 
 --6
+firstName :: String -> String
+firstName nome = head (words nome)
 
+--7
+--isInt :: String -> Bool
+--isNumber USAR ESSA FUNÇÃO 
+
+--8
+lastName :: String -> String
+lastName nome = last (words nome)
+
+--9
+--toLower :: Char -> Char
+--toLower c = chr (towlower (ord c))
+
+userName :: String -> String
+userName nome = towlower (head (head (words nome)) : last (words nome))
