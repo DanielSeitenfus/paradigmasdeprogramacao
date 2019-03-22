@@ -1,4 +1,4 @@
-import Data.Char 
+--import Data.Char 
 --1
 isVowel :: Char -> Bool
 isVowel letra = if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') then True else False
@@ -50,6 +50,23 @@ lastName nome = last (words nome)
 --9
 --toLower :: Char -> Char
 --toLower c = chr (towlower (ord c))
-
 userName :: String -> String
-userName nome = towlower (head (head (words nome)) : last (words nome))
+userName nome = head (head (words nome)) : last (words nome)
+
+--10
+encodeName :: String -> String
+encodeName palavra = map (\letra -> if letra == 'a' then '4' else if letra == 'e' then '3' else if letra == 'i' then '2' else if letra == 'o' then '1' else if letra == 'u' then '0' else letra) palavra
+
+--11
+betterEncodeName :: String -> String
+betterEncodeName palavra = map (\letra -> if letra == 'a' then '4' else if letra == 'e' then '3' else if letra == 'i' then '1' else if letra == 'o' then '0' else if letra == 'u' then '0' else letra) palavra --tem que ser 00
+
+--12
+laco :: String -> String
+laco string = if(length(string)<10) then string++"." else string
+
+acr :: String -> String
+acr palavra = if length(palavra)<10 then laco palavra else if length(palavra)==10  then "igual a 10" else if length(palavra)>10 then "maior que 10" else palavra
+
+acrString :: [String] -> [String]
+acrString lista = map acr lista
