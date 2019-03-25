@@ -36,6 +36,9 @@ retiraVogais2 palavra = filter isVogal palavra
 codifica :: String -> String
 codifica palavra = map (\c -> if c /= ' ' then '-' else c) palavra
 
+codifica2 :: String -> String
+codifica2 frase = codifica frase
+
 --6
 firstName :: String -> String
 firstName nome = head (words nome)
@@ -52,7 +55,7 @@ lastName nome = last (words nome)
 --toLower :: Char -> Char
 --toLower c = chr (towlower (ord c))
 userName :: String -> String
-userName nome = head (head (words nome)) : last (words nome)
+userName nome = map toLower (head (head (words nome)) : last (words nome))
 
 --10
 encodeName :: String -> String
