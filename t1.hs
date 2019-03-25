@@ -1,4 +1,5 @@
---import Data.Char 
+import Data.Char (isDigit)
+import Data.Char (toLower)
 --1
 isVowel :: Char -> Bool
 isVowel letra = if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') then True else False
@@ -40,8 +41,8 @@ firstName :: String -> String
 firstName nome = head (words nome)
 
 --7
---isInt :: String -> Bool
---isNumber USAR ESSA FUNÇÃO 
+isInt :: String -> Bool 
+isInt = all isDigit
 
 --8
 lastName :: String -> String
@@ -58,15 +59,12 @@ encodeName :: String -> String
 encodeName palavra = map (\letra -> if letra == 'a' then '4' else if letra == 'e' then '3' else if letra == 'i' then '2' else if letra == 'o' then '1' else if letra == 'u' then '0' else letra) palavra
 
 --11
+subs :: Char -> String
+subs c = if (toLower c) == 'a' then "4" else if (toLower c) == 'e' then "3" else if (toLower c) == 'i' then "1" else if (toLower c) == 'o' then "0" else if (toLower c) == 'u' then "00" else [c]
+
 betterEncodeName :: String -> String
-betterEncodeName palavra = map (\letra -> if letra == 'a' then '4' else if letra == 'e' then '3' else if letra == 'i' then '1' else if letra == 'o' then '0' else if letra == 'u' then '0' else letra) palavra --tem que ser 00
+betterEncodeName nome = concatMap (\c -> subs c) nome
 
 --12
-laco :: String -> String
-laco string = if(length(string)<10) then string++"." else string
-
-acr :: String -> String
-acr palavra = if length(palavra)<10 then laco palavra else if length(palavra)==10  then "igual a 10" else if length(palavra)>10 then "maior que 10" else palavra
-
-acrString :: [String] -> [String]
-acrString lista = map acr lista
+tenLimit :: [String] -> [String]
+tenLimit list = map (\p ->  if (length p) > 10 then (take 10 p) else (take 10 (p ++ ".........."))) list
