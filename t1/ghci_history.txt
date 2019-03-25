@@ -1,0 +1,46 @@
+Como não encontrei o arquivo ghci_history no Windows, acabei criando esse arquivo com os testes realizados.
+
+GHCi, version 8.6.3: http://www.haskell.org/ghc/  :? for help
+Prelude> :cd C:\Users\danie\Desktop\UFSM\Ciência da Computação\Paradigmas de Programação\paradigmasdeprogramacao\t1
+Prelude> :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+iOk, one module loaded.
+*Main> isVowel 'a'
+True
+*Main> addComma ["teste1", "teste2"]
+["teste1,","teste2,"]
+*Main> htmlListItems ["string 1", string 2"]
+
+<interactive>:11:38: error:
+    lexical error in string/character literal at end of input
+*Main> htmlListItems ["string 1", "string 2"]
+["<li>string 1</li>","<li>string 2</li>"]
+*Main> htmlListItems2 ["teste", "testee"]
+["<li>teste</li>","<li>testee</li>"]
+*Main> retiraVogais "abcde"
+"bcd"
+*Main> retiraVogais2 "abcde"
+"bcd"
+*Main> codifica "daniel seitenfus"
+"------ ---------"
+*Main> codifica2 "daniel brenner seitenfus"
+"------ ------- ---------"
+*Main> firstName "Daniel Brnner"
+"Daniel"
+*Main> isInt "1254"
+True
+*Main> isInt "1254.5"
+False
+*Main> isInt "1254asfas"
+False
+*Main> lastName "Daniel Brenner Seitenfus"
+"Seitenfus"
+*Main> userName "Daniel Brenner Seitenfus"
+"dseitenfus"
+*Main> encodeName "danielbrennerseitenfus"
+"d4n23lbr3nn3rs32t3nf0s"
+*Main> betterEncodeName "daniel brenner seitenfus"
+"d4n13l br3nn3r s31t3nf00s"
+*Main> corrigeString ["123", "1234567891", "1234567891011121314"]
+["123.......","1234567891","1234567891"]
+*Main> 
