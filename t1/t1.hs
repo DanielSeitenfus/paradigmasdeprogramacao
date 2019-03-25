@@ -5,8 +5,8 @@ isVowel :: Char -> Bool
 isVowel letra = if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') then True else False
 
 --2
-addVirgula :: [String] -> [String]
-addVirgula lista = map (\i -> i++",") lista
+addComma :: [String] -> [String]
+addComma lista = map (\i -> i++",") lista
 
 --3
 --Não anônima:
@@ -69,5 +69,5 @@ betterEncodeName :: String -> String
 betterEncodeName nome = concatMap (\c -> subs c) nome
 
 --12
-tenLimit :: [String] -> [String]
-tenLimit list = map (\p ->  if (length p) > 10 then (take 10 p) else (take 10 (p ++ ".........."))) list
+corrigeString :: [String] -> [String]
+corrigeString list = map (\p ->  if (length p) > 10 then (take 10 p) else (take 10 (p ++ ".........."))) list
