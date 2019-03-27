@@ -1,0 +1,117 @@
+GHCi, version 8.6.3: http://www.haskell.org/ghc/  :? for help
+Prelude> :load l2.hs
+
+<no location info>: error: can't find file: l2.hs
+Failed, no modules loaded.
+Prelude> :cd C:\Users\danie\Desktop\UFSM\Ciência da Computação\Paradigmas de Programação\paradigmasdeprogramacao\Listas de exercícios
+Prelude> :load "l2.hs"
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Ok, one module loaded.
+*Main> add10toall [1, 2, 3, 4, 5]
+[11,12,13,14,15]
+*Main> :reload
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Ok, one module loaded.
+*Main> multN 2 [1,2,3,4,5,6]
+[2,4,6,8,10,12]
+*Main> :reload
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Ok, one module loaded.
+*Main> applyExpr [1,2,3,4,5,6]
+[5,8,11,14,17,20]
+*Main> addSufix "@inf.ufsm.br" ["dbseitenfus","jcaggens"]
+
+<interactive>:15:1: error:
+    Variable not in scope: addSufix :: [Char] -> [[Char]] -> t
+*Main> addSuffix "@inf.ufsm.br" ["dbseitenfus","jcaggens"]
+
+<interactive>:16:1: error:
+    Variable not in scope: addSuffix :: [Char] -> [[Char]] -> t
+*Main> :reload
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Ok, one module loaded.
+*Main> addSufix "@inf.ufsm.br" ["dbseitenfus","jcaggens"]
+
+<interactive>:18:1: error:
+    • Variable not in scope: addSufix :: [Char] -> [[Char]] -> t
+    • Perhaps you meant ‘addSuffix’ (line 15)
+*Main> addSuffix "@inf.ufsm.br" ["dbseitenfus","jcaggens"]
+["dbseitenfus@inf.ufsm.br","jcaggens@inf.ufsm.br"]
+*Main> :reload
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Ok, one module loaded.
+*Main> selectgt5 [1,2,3,4,5,6,7,8,9,10]
+[6,7,8,9,10]
+*Main> :reload
+
+l2.hs:22:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+22 | sumOdds :: [Int] -> Int    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> :reload
+
+l2.hs:26:1: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+   |
+26 | selectExpr :: [Int] -> [Int]    | ^
+[1 of 1] Compiling Main             ( l2.hs, interpreted )
+Failed, no modules loaded.
+Prelude> 
