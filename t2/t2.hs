@@ -25,6 +25,9 @@ genRectsInLine n  = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
   where (w,h) = (50,50)
         gap = 10
 
+printRect :: [Rect] -> IO()
+printRect list = putStr (unlines $ ["   " ++ svgRect r (svgStyle (0,0,0)) | r <- list])
+
 
 -------------------------------------------------------------------------------
 -- Strings SVG
@@ -34,7 +37,7 @@ genRectsInLine n  = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
 -- dadas coordenadas e dimensoes do retângulo e uma string com atributos de estilo
 svgRect :: Rect -> String -> String 
 svgRect ((x,y),w,h) style = 
-  printf "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s' />\n" x y w h style
+  printf "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s' />" x y w h style
 
 -- String inicial do SVG
 svgBegin :: Float -> Float -> String
@@ -68,4 +71,3 @@ main = do
         nrects = 10
         (w,h) = (1500,500) -- width,height da imagem SVG
 
-        

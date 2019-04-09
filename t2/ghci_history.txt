@@ -1,0 +1,48 @@
+Prelude> :load "t2.hs"
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:29:18: error:
+    • Couldn't match expected type ‘IO ()’ with actual type ‘[[Char]]’
+    • In the expression:
+        ["   " ++ svgRect r (svgStyle (0, 0, 0)) | r <- list]
+      In an equation for ‘printRect’:
+          printRect list
+            = ["   " ++ svgRect r (svgStyle (0, 0, 0)) | r <- list]
+   |
+29 | printRect list = ["   " ++ svgRect r (svgStyle (0,0,0)) | r <- list]    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:29:26: error:
+    • Variable not in scope: unlists :: [[Char]] -> String
+    • Perhaps you meant ‘unlines’ (imported from Prelude)
+   |
+29 | printRect list = putStr (unlists $ ["   " ++ svgRect r (svgStyle (0,0,0)) | r <- list])    |                          ^^^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> printRect (genRectsInLine 10)
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> printRect (genRectsInLine 10)
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> 
