@@ -25,8 +25,13 @@ genRectsInLine n  = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
   where (w,h) = (50,50)
         gap = 10
 
-printRect :: [Rect] -> IO()
-printRect list = putStr (unlines $ ["   " ++ svgRect r (svgStyle (0,0,0)) | r <- list])
+printRect :: [Rect] -> [[Char]]
+printRect list =  ["   " ++ svgRect r (svgStyle (0,0,0)) | r <- list]
+
+--Minhas funções
+genCase1 :: IO ()
+genCase1 = putStr (unlines $ printRect (genRectsInLine 10))
+--[(X,Y),2.0,2.0]
 
 
 -------------------------------------------------------------------------------
