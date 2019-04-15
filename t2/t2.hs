@@ -25,15 +25,25 @@ genRectsInLine n = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
   where (w,h) = (50,50)
         gap = 10
 
+genCircle :: Int -> [Circle]
+genCircle n = [(((sin ((pi*m)/n)), (cos ((pi*m)/n))),20.0) | m <- [1..4], n<-[2..4]]
+  where (w,h) = (50,50)
+        gap = 10
 
 
 printRect :: [Rect] -> [[Char]]
-printRect list =  ["   " ++ svgRect ((x,l*60),w,h) (svgStyle (0,round (51*l+(x/4)),0)) | ((x,y),w,h) <- list, l <- [0..fromIntegral(5-1)]]
+printRect list =  ["   " ++ svgRect ((x,l*60),w,h) (svgStyle (0,round (51*l+(x/5)+30),0)) | ((x,y),w,h) <- list, l <- [0..fromIntegral(5-1)]]
+
+printCircle :: [Circle] -> [[Char]]
+printCircle list =  ["   " ++ svgCircle ((x*(180/pi),y*(180/pi)),r) (svgStyle (0,0,0)) | ((x,y),r) <- list]
 
 --Minhas funções
 genCase1 :: IO ()
 genCase1 = putStr (unlines $ printRect (genRectsInLine 10))
 --[(X,Y),2.0,2.0]
+
+genCase2 :: IO ()
+genCase2 = putStr (unlines $ printCircle (genCircle 12))
 
 
 -------------------------------------------------------------------------------
@@ -45,6 +55,10 @@ genCase1 = putStr (unlines $ printRect (genRectsInLine 10))
 svgRect :: Rect -> String -> String 
 svgRect ((x,y),w,h) style = 
   printf "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s' />" x y w h style
+
+svgCircle :: Circle -> String -> String 
+svgCircle ((x,y),r) style = 
+  printf "<circle cx='%.3f' cy='%.3f' r='%.3f' style='%s'/>" x y r style
 
 -- String inicial do SVG
 svgBegin :: Float -> Float -> String
@@ -58,6 +72,7 @@ svgEnd = "</svg>"
 -- Atributo mix-blend-mode permite misturar cores
 svgStyle :: (Int,Int,Int) -> String
 svgStyle (r,g,b) = printf "fill:rgb(%d,%d,%d); mix-blend-mode: screen;" r g b
+
 
 -- Gera strings SVG para uma dada lista de figuras e seus atributos de estilo
 -- Recebe uma funcao geradora de strings SVG, uma lista de círculos/retângulos e strings de estilo
