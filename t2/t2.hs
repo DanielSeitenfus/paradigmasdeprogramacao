@@ -35,7 +35,7 @@ printRect :: [Rect] -> [[Char]]
 printRect list =  ["   " ++ svgRect ((x,l*60),w,h) (svgStyle (0,round (51*l+(x/5)+30),0)) | ((x,y),w,h) <- list, l <- [0..fromIntegral(5-1)]]
 
 printCircle :: [Circle] -> [[Char]]
-printCircle list =  ["   " ++ svgCircle ((x*(180/pi),y*(180/pi)),r) (svgStyle (0,0,0)) | ((x,y),r) <- list]
+printCircle list =  ["   " ++ svgCircle ((x*(180/pi)+100,y*(180/pi)+100),r) (svgStyle (0,0,0)) | ((x,y),r) <- list]
 
 --Minhas funções
 genCase1 :: IO ()
