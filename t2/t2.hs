@@ -21,7 +21,7 @@ greenPalette n = [(0,80+i*10,0) | i <- [0..n] ]
 -------------------------------------------------------------------------------
 
 genRectsInLine :: Int -> [Rect]
-genRectsInLine n  = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
+genRectsInLine n = [((m*(w+gap),l*(h+gap)),w,h) | m <- [0..fromIntegral (n-1)], l <- [0..fromIntegral(5-1)]]
   where (w,h) = (50,50)
         gap = 10
 
