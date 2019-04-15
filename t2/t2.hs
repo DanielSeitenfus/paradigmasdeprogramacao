@@ -21,14 +21,14 @@ greenPalette n = [(0,80+i*10,0) | i <- [0..n] ]
 -------------------------------------------------------------------------------
 
 genRectsInLine :: Int -> [Rect]
-genRectsInLine n = [((m*(w+gap),l*(h+gap)),w,h) | m <- [0..fromIntegral (n-1)], l <- [0..fromIntegral(5-1)]]
+genRectsInLine n = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
   where (w,h) = (50,50)
         gap = 10
 
 
 
 printRect :: [Rect] -> [[Char]]
-printRect list =  ["   " ++ svgRect ((x,y),w,h) (svgStyle (0,round y,0)) | ((x,y),w,h) <- list]
+printRect list =  ["   " ++ svgRect ((x,l*60),w,h) (svgStyle (0,round (255/(l+1)),0)) | ((x,y),w,h) <- list, l <- [0..fromIntegral(5-1)]]
 
 --Minhas funções
 genCase1 :: IO ()
