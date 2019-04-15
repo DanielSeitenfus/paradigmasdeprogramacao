@@ -46,3 +46,531 @@ Ok, one module loaded.
    <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
    <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
 *Main> 
+GHCi, version 8.6.3: http://www.haskell.org/ghc/  :? for help
+Prelude> :cd C:\Users\danie\Desktop\UFSM\Ciência da Computação\Paradigmas de Programação\paradigmasdeprogramacao\t2
+Prelude> :load "t2.hs"
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+genCase1
+
+t2.hs:73:39: error:
+    • Couldn't match expected type ‘[Rect]’
+                  with actual type ‘Int -> [Rect]’
+    • Probable cause: ‘rects’ is applied to too few arguments
+      In the second argument of ‘svgElements’, namely ‘rects’
+      In the expression: svgElements svgRect rects (map svgStyle palette)
+      In an equation for ‘svgfigs’:
+          svgfigs = svgElements svgRect rects (map svgStyle palette)
+   |
+73 |         svgfigs = svgElements svgRect rects (map svgStyle palette)    |                                       ^^^^^
+Failed, no modules loaded.
+Prelude> 
+<interactive>:9:1: error: Variable not in scope: genCase1
+Prelude>:reloa
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:73:39: error:
+    • Couldn't match expected type ‘[Rect]’
+                  with actual type ‘Int -> [Rect]’
+    • Probable cause: ‘rects’ is applied to too few arguments
+      In the second argument of ‘svgElements’, namely ‘rects’
+      In the expression: svgElements svgRect rects (map svgStyle palette)
+      In an equation for ‘svgfigs’:
+          svgfigs = svgElements svgRect rects (map svgStyle palette)
+   |
+73 |         svgfigs = svgElements svgRect rects (map svgStyle palette)    |                                       ^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:24:92: error:
+    • No instance for (Integral Float)
+        arising from a use of ‘fromIntegral’
+    • In the expression: fromIntegral (a - 1)
+      In the expression: [0 .. fromIntegral (a - 1)]
+      In a stmt of a list comprehension: l <- [0 .. fromIntegral (a - 1)]
+   |
+24 | genRectsInLine n a = [((m*(w+gap),l*(gap+h)),w,h) | m <- [0..fromIntegral (n-1)], l <- [0..fromIntegral(a-1)]]    |                                                                                            ^^^^^^^^^^^^^^^^^
+
+t2.hs:73:39: error:
+    • Couldn't match expected type ‘[Rect]’
+                  with actual type ‘Float -> [Rect]’
+    • Probable cause: ‘rects’ is applied to too few arguments
+      In the second argument of ‘svgElements’, namely ‘rects’
+      In the expression: svgElements svgRect rects (map svgStyle palette)
+      In an equation for ‘svgfigs’:
+          svgfigs = svgElements svgRect rects (map svgStyle palette)
+   |
+73 |         svgfigs = svgElements svgRect rects (map svgStyle palette)    |                                       ^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:23:26: error:
+    • Expected kind ‘* -> *’, but ‘Int’ has kind ‘*’
+    • In the type signature: genRectsInLine :: Int -> Int [Rect]
+   |
+23 | genRectsInLine :: Int -> Int [Rect]    |                          ^^^^^^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='600.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='660.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='720.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='780.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='840.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='900.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='960.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1020.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1080.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1140.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1200.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1260.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1320.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1380.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1440.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1500.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1560.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1620.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1680.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1740.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1800.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1860.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1920.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='1980.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2040.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2100.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2160.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2220.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2280.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2340.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2400.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2460.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2520.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2580.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2640.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2700.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2760.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2820.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2880.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='2940.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:24:96: error: Variable not in scope: a :: Integer
+   |
+24 | genRectsInLine n  = [((m*(w+gap),l),w,h) | m <- [0..fromIntegral (n-1)], l <- [0..fromIntegral(a-1)]]    |                                                                                                ^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:73:39: error:
+    • Couldn't match expected type ‘[Rect]’
+                  with actual type ‘Int -> [Rect]’
+    • Probable cause: ‘rects’ is applied to too few arguments
+      In the second argument of ‘svgElements’, namely ‘rects’
+      In the expression: svgElements svgRect rects (map svgStyle palette)
+      In an equation for ‘svgfigs’:
+          svgfigs = svgElements svgRect rects (map svgStyle palette)
+   |
+73 |         svgfigs = svgElements svgRect rects (map svgStyle palette)    |                                       ^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Failed, no modules loaded.
+
+t2.hs:24:95: error: Variable not in scope: a :: Integer
+   |
+24 | genRectsInLine n = [((m*(w+gap),l),w,h) | m <- [0..fromIntegral (n-1)], l <- [0..fromIntegral(a-1)]]    |                                                                                               ^
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:33:41: error:
+    • Couldn't match expected type ‘Integer -> [Rect]’
+                  with actual type ‘[Rect]’
+    • The function ‘genRectsInLine’ is applied to two arguments,
+      but its type ‘Int -> [Rect]’ has only one
+      In the first argument of ‘printRect’, namely
+        ‘(genRectsInLine 10 5)’
+      In the second argument of ‘($)’, namely
+        ‘printRect (genRectsInLine 10 5)’
+   |
+33 | genCase1 = putStr (unlines $ printRect (genRectsInLine 10 5))    |                                         ^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+
+t2.hs:33:41: error:
+    • Couldn't match expected type ‘Integer -> [Rect]’
+                  with actual type ‘[Rect]’
+    • The function ‘genRectsInLine’ is applied to two arguments,
+      but its type ‘Int -> [Rect]’ has only one
+      In the first argument of ‘printRect’, namely
+        ‘(genRectsInLine 10 5)’
+      In the second argument of ‘($)’, namely
+        ‘printRect (genRectsInLine 10 5)’
+   |
+33 | genCase1 = putStr (unlines $ printRect (genRectsInLine 10 5))    |                                         ^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+
+   <rect x='180.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='5.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='6.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='7.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='8.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='9.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+
+   <rect x='360.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='1.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='2.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='3.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='4.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='100.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='200.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='300.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='400.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Failed, no modules loaded.
+
+t2.hs:73:39: error:
+    • Couldn't match expected type ‘[Rect]’
+                  with actual type ‘Int -> [Rect]’
+    • Probable cause: ‘rects’ is applied to too few arguments
+      In the second argument of ‘svgElements’, namely ‘rects’
+      In the expression: svgElements svgRect rects (map svgStyle palette)
+      In an equation for ‘svgfigs’:
+          svgfigs = svgElements svgRect rects (map svgStyle palette)
+   |
+73 |         svgfigs = svgElements svgRect rects (map svgStyle palette)    |                                       ^^^^^
+Prelude> :reload
+[1 of 1] Compiling Main             ( t2.hs, interpreted )
+Ok, one module loaded.
+*Main> genCase1
+   <rect x='0.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='0.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='60.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='120.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='180.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='240.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='300.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='360.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='420.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='480.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='0.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='60.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='120.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='180.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+   <rect x='540.000' y='240.000' width='50.00' height='50.00' style='fill:rgb(0,0,0); mix-blend-mode: screen;' />
+*Main> 
