@@ -28,7 +28,7 @@ genRectsInLine n = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
 
 
 printRect :: [Rect] -> [[Char]]
-printRect list =  ["   " ++ svgRect ((x,l*60),w,h) (svgStyle (0,round (255/(l+1)),0)) | ((x,y),w,h) <- list, l <- [0..fromIntegral(5-1)]]
+printRect list =  ["   " ++ svgRect ((x,l*60),w,h) (svgStyle (0,round (51*l+30),0)) | ((x,y),w,h) <- list, l <- [0..fromIntegral(5-1)]]
 
 --Minhas funções
 genCase1 :: IO ()
