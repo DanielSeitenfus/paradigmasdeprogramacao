@@ -26,7 +26,7 @@ genRectsInLine n = [((m*(w+gap),0.0),w,h) | m <- [0..fromIntegral (n-1)]]
         gap = 10
 
 genCircle :: Int -> [Circle]
-genCircle n = [(((sin ((pi*m)/n)), (cos ((pi*m)/n))),20.0) | m <- [1..4], n<-[2..4]]
+genCircle n = [(((sin ((pi*m)/n)), (cos ((pi*m)/n))),20.0) | m <- [1..4], n<-[1..3]]
   where (w,h) = (50,50)
         gap = 10
 
