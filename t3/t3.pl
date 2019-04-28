@@ -14,9 +14,19 @@ inc99([H|T],L2) :-
 	inc99(T, [H1|T2]). /*passa o valor de H1 como Head, assim ele adiciona na lista*/
 
 /*Defina um predicado recursivo incN(L1,L2,N), de forma que L2 seja uma lista com todos os elementos de L1 acrescidos da constante N.*/
-/*Minha primeira lógica foi essa, porém não funcionou*/
-incN([],L2,N).
-incN([H|T], L2, N) :-
+/*Minha primeira lógica foi essa, porém não funcionou. Quando o L1 fica em [] ele não fez todas operações com o L2?*/
+incN2([],L2,N).
+incN2([H|T], L2, N) :-
 	H1 is H + N,
-	incN(T, [H1|T2], N).
+	incN2(T, [H1|T2], N).
 
+incN([],[],N). /* Devo colocar L1 e L2 = [] como instrução de parada porque ele executa primeiro um depois o outro*/
+incN([H|T], [H2|T2], N) :-
+	incN(T, T2, N),
+	H2 is H + N.
+
+/*Defina um predicado recursivo comment(L1,L2), de forma que L1 seja uma lista de strings e L2 tenha todos os elementos de L1 concatenados com o prefixo "%%". Dica: consulte predicados Prolog para manipulação de strings.*/
+comment([],[]).
+comment([H1|T1],[H2|T2]) :-
+	comment(T1,T2),
+	string_concat("%%", H1, H2).
