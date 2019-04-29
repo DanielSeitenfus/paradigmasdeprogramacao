@@ -54,6 +54,19 @@ nRandoms(N, [H|T]) :-
 	random(1, 100, H),
 	nRandoms(N1,T).
 
+potN0(-1,[]) :- !.
+potN0(N,[H|T]) :-
+	pow(2,N,H),
+	N1 is N - 1,
+	potN0(N1, T).
+
+pow(_,0,1).
+pow(_,0,_).
+pow(N,E,R) :- 
+  E1 is E - 1, 
+  pow(N,E1,R1), 
+  R is N * R1.
+
 
 
 
