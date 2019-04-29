@@ -48,6 +48,12 @@ countdown(N,[H|T]) :-
 	H = N,
 	countdown(N1, T).
 
+nRandoms(0,[]) :- !.
+nRandoms(N, [H|T]) :-
+	N1 is N - 1,
+	random(1, 100, H),
+	nRandoms(N1,T).
+
 
 
 
