@@ -1,10 +1,9 @@
 odd(N) :- N mod 2 =\= 0.
 
-/*Defina um predicado recursivo hasN(L,N) que seja verdadeiro se L for uma lista de N elementos.*/
-/*Estava começando a fazer a questão e somente testei o que isso iria retornar, e para minha surpresa, funcionou. Porém não entendi porque ele decrementa e testa automaticamente se o N>0 */
-hasN([],N). /*condição de parada*/
-hasN([H|T],N) :-
-	hasN(T,N).
+hasN([],0). /*Quando a lista estiver vazia e o N=0 retorna true, caso contrário, false.*/
+hasN([_|T],N) :-
+	N1 is N - 1,
+	hasN(T,N1).
 
 /*Defina um predicado recursivo inc99(L1,L2), */
 /*de forma que L2 seja uma lista com todos os elementos de L1 acrescidos da constante 99.*/
@@ -42,6 +41,8 @@ H2 = H1,
 par(H1),
 onlyEven(T1,T2); 
 onlyEven(T1,[H2|T2]). /* caso o par(H1) dê falso, perde-se a instância de H2(?) e executa-se onlyEven(T1, [H2|T2]) com H2 diferente de H1*/
+
+
 
 
 
