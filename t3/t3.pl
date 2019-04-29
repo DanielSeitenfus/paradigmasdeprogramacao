@@ -72,11 +72,10 @@ potencias_(I, F, [H|T]):-
 	potencias_(C, F, T).
 
 /*---------12*/
-cedulas(_,[],[]).
+cedulas(_,[],[]) :- !.
 cedulas(V,[H|T],[H2|T2]) :-
 	H2 is V//H,
 	V2 is V mod H,
-
 	cedulas(V2,T,T2).
 
 
