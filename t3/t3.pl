@@ -12,12 +12,6 @@ inc99([H|T],_) :-
 	H1 is H + 99, /*Define H1 pois o valor a esquerda não pode estar instaciado*/
 	inc99(T, [H1|_]). /*passa o valor de H1 como Head, assim ele adiciona na lista*/
 
-/*Defina um predicado recursivo incN(L1,L2,N), de forma que L2 seja uma lista com todos os elementos de L1 acrescidos da constante N.*/
-/*Minha primeira lógica foi essa, porém não funcionou. Quando o L1 fica em [] ele não fez todas operações com o L2?*/
-incN2([],_,_).
-incN2([H|T], _, N) :-
-	H1 is H + N,
-	incN2(T, [H1|_], N).
 
 incN([],[],_). /* Devo colocar L1 e L2 = [] como instrução de parada porque ele executa primeiro um depois o outro*/
 incN([H|T], [H2|T2], N) :-
@@ -56,21 +50,26 @@ nRandoms(N, [H|T]) :-
 
 potN0(-1,[]) :- !.
 potN0(N,[H|T]) :-
-	pow(2,N,H),
+	H is 2**N,
 	N1 is N - 1,
 	potN0(N1, T).
-
-pow(_,0,1).
-pow(_,0,_).
-pow(N,E,R) :- 
-  E1 is E - 1, 
-  pow(N,E1,R1), 
-  R is N * R1.
 
 zipmult([],[],[]) :- !.
 zipmult([H1|T1],[H2|T2],[H3|T3]) :-
 	H3 is H1*H2,
 	zipmult(T1,T2,T3).
+
+potencias(N,L) :- potencias_(0,N,L).
+
+potencias_(N1, N1, []) :- !.
+potencias_(I, F, [H|T]):-
+	H is 2**I,
+	C is I + 1,
+	potencias_(C, F, T).
+
+
+
+
 
 
 
