@@ -30,3 +30,20 @@ comment([],[]).
 comment([H1|T1],[H2|T2]) :-
 	comment(T1,T2),
 	string_concat("%%", H1, H2).
+
+/*Defina um predicado recursivo onlyEven(L1,L2), de forma que L2 seja uma lista só com os elementos pares de L1, conforme o exemplo abaixo:*/
+/*?- onlyEven2([1,2,3,4,5,6,7],L).*/
+/*L = [2, 4, 6].*/
+par(N) :- N mod 2 =:= 0.
+
+onlyEven([],[]).
+onlyEven([H1|T1],[H2|T2]) :-
+H2 = H1,
+par(H1),
+onlyEven(T1,T2); 
+onlyEven(T1,[H2|T2]). /* caso o par(H1) dê falso, perde-se a instância de H2(?) e executa-se onlyEven(T1, [H2|T2]) com H2 diferente de H1*/
+
+
+
+
+
