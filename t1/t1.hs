@@ -44,8 +44,11 @@ firstName :: String -> String
 firstName nome = head (words nome)
 
 --7
+isDigit :: Char -> Bool
+isDigit c = if(c=='0' || c=='1' || c=='2'|| c=='3'|| c=='4'|| c=='5'|| c=='6'|| c=='7'|| c=='8'|| c=='9') then True else False
+
 isInt :: String -> Bool 
-isInt = all isDigit
+isInt int = all isDigit int
 
 --8
 lastName :: String -> String
