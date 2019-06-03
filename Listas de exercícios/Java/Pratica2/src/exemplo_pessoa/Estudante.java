@@ -25,8 +25,10 @@ public class Estudante extends Pessoa{
         this.matricula = matricula;
     }
     
+    @Override
     public void mostraDados(){
-        System.out.println("Nome: "+nome);
+        super.mostraDados();
+        System.out.println("Matrícula: "+matricula);
     }
     
 }

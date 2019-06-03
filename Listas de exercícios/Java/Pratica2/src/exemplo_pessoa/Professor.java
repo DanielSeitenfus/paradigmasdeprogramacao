@@ -35,4 +35,10 @@ public class Professor extends Pessoa{
         this.salario = salario;
     }
     
+    @Override
+    public void mostraDados(){
+        super.mostraDados();
+        System.out.println("Salário: "+salario);
+        System.out.println("Siape: "+siape);
+    }
 }

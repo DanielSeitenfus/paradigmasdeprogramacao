@@ -5,6 +5,8 @@
  */
 package exemplo_pessoa;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author danie
@@ -13,5 +15,13 @@ public class Main {
     public static void main(String[] args) {
         Estudante estudante = new Estudante("Daniel", "039.068.650-61", 21, 2019510121);
         Professor professor = new Professor("Professor","CPF",45,123,15000);
+        ArrayList<Pessoa> listaPessoas = new ArrayList<>();
+        listaPessoas.add(estudante);
+        listaPessoas.add(professor);
+        
+        for(int i=0; i<listaPessoas.size(); i++){
+            Pessoa pessoa = listaPessoas.get(i);
+            pessoa.mostraDados();
+        }
     }
 }

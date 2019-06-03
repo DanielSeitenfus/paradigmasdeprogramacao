@@ -45,7 +45,9 @@ public class Pessoa {
     }
     
     public void mostraDados(){
-        
+        System.out.println("Nome: "+nome);
+        System.out.println("CPF: "+CPF);
+        System.out.println("Idade: "+idade);
     }
     
     
