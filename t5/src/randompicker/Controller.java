@@ -25,7 +25,7 @@ public class Controller {
         model.leArquivo(file);
     }
     
-    void random(String nomes){
+    void random(String nomes) throws IOException{
         model.random(nomes);
     }
     
