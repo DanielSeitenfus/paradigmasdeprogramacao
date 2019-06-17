@@ -36,6 +36,7 @@ public class RandomPickerGUI extends javax.swing.JFrame implements InterfaceView
         jMIOpen = new javax.swing.JMenuItem();
         jMIExit = new javax.swing.JMenuItem();
         jMHelp = new javax.swing.JMenu();
+        jMIAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +80,15 @@ public class RandomPickerGUI extends javax.swing.JFrame implements InterfaceView
         jMenuBar1.add(jMFile);
 
         jMHelp.setText("Help");
+
+        jMIAbout.setText("About");
+        jMIAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIAboutActionPerformed(evt);
+            }
+        });
+        jMHelp.add(jMIAbout);
+
         jMenuBar1.add(jMHelp);
 
         setJMenuBar(jMenuBar1);
@@ -135,7 +145,7 @@ public class RandomPickerGUI extends javax.swing.JFrame implements InterfaceView
     }//GEN-LAST:event_jMIOpenActionPerformed
 
     private void jMIExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIExitActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jMIExitActionPerformed
 
     private void jBSuffleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSuffleActionPerformed
@@ -156,6 +166,10 @@ public class RandomPickerGUI extends javax.swing.JFrame implements InterfaceView
         controller.next();
     }//GEN-LAST:event_jBNextActionPerformed
 
+    private void jMIAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAboutActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Random\nAutor: Daniel Seitenfus");
+    }//GEN-LAST:event_jMIAboutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -173,6 +187,7 @@ public class RandomPickerGUI extends javax.swing.JFrame implements InterfaceView
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMFile;
     private javax.swing.JMenu jMHelp;
+    private javax.swing.JMenuItem jMIAbout;
     private javax.swing.JMenuItem jMIExit;
     private javax.swing.JMenuItem jMIOpen;
     private javax.swing.JMenuBar jMenuBar1;
