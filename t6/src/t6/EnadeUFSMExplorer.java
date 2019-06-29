@@ -19,8 +19,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,7 +43,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class T6 extends Application {
+public class EnadeUFSMExplorer extends Application {
     String url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTO06Jdr3J1kPYoTPRkdUaq8XuslvSD5--FPMht-ilVBT1gExJXDPTiX0P3FsrxV5VKUZJrIUtH1wvN/pub?gid=0&single=true&output=csv";
     List<String[]> lista;
 
@@ -72,7 +70,7 @@ public class T6 extends Application {
         menuBar.getMenus().addAll(menu1, menu2);
 
         //Table View
-        Label label = new Label("Enade - Ciência da Computação");
+        Label label = new Label("EnadeUFSMExplorer");
         TableView table = new TableView();
         carregaTabela(table, false);
         VBox vbox = new VBox();
@@ -103,7 +101,7 @@ public class T6 extends Application {
             System.exit(0);
         });
         menuItemAbout.setOnAction(((event) -> { //About
-            new Alert(Alert.AlertType.INFORMATION, "Visualizador de dados Enade\nDesenvolvido por: Daniel Seitenfus").show();
+            new Alert(Alert.AlertType.INFORMATION, "EnadeUFSMExplorer\nDesenvolvido por: Daniel Seitenfus").show();
         }));
     }
 
@@ -172,7 +170,7 @@ public class T6 extends Application {
                     try {
                         in.close();
                     } catch (IOException ex) {
-                        Logger.getLogger(T6.class.getName()).log(Level.SEVERE, null, ex);
+                        new Alert(Alert.AlertType.ERROR, "Algo não ocorreu bem!").show();
                     }
                 }
             }
