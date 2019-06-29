@@ -6,7 +6,6 @@
 package t6;
 
 import com.opencsv.CSVReaderHeaderAware;
-import com.sun.rowset.internal.Row;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,130 +17,112 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import static javafx.scene.input.DataFormat.URL;
-import javafx.scene.input.MouseButton;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class T6 extends Application {
+
     List<String[]> lista;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-        
+
         FlowPane flowPane = new FlowPane(Orientation.VERTICAL);
         flowPane.setAlignment(Pos.TOP_LEFT);
 
         primaryStage.setScene(new Scene(flowPane));
+        primaryStage.setHeight(500);
+        primaryStage.setWidth(760);
         primaryStage.show();
-        
+
         Menu menu1 = new Menu("File");
-        MenuItem menuItem[] = { 
+        MenuItem menuItem[] = {
             new MenuItem("Reload"),
             new MenuItem("Source"),
             new MenuItem("Exit")};
         menu1.getItems().addAll(menuItem);
-        Menu menu2 = new Menu("Options");
-        Menu menu3 = new Menu("Help");
+        Menu menu2 = new Menu("Help");
+        MenuItem menuItemAbout = new MenuItem("About");
+        menu2.getItems().add(menuItemAbout);
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(menu1, menu2, menu3);
-        
+        menuBar.getMenus().addAll(menu1, menu2);
+
         //Table View
-        Label label = new Label("TableView Example");
+        Label label = new Label("Enade - Ciência da Computação");
         TableView table = new TableView();
-        carregaTabela(table);
+        carregaTabela(table, false);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(label, table, menuBar);
         flowPane.getChildren().add(menuBar);
         flowPane.getChildren().add(vbox);
-       // primaryStage.setScene(new Scene(vbox,180,400));
-        //primaryStage.show();
-        
+
         //Eventos
         //Clique na linha da tabela
         table.setRowFactory(tv -> {
             TableRow<Questao> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
-                table.getSelectionModel().focus(14);
                 String dados[] = lista.get(table.getSelectionModel().getFocusedIndex());
                 try {
-                    abreTelaInfos(primaryStage, new Questao(dados[1],dados[2],dados[3],dados[4],dados[5],dados[8],dados[9],dados[10],dados[11],dados[7],dados[13],dados[17])); 
+                    abreTelaInfos(primaryStage, new Questao(dados[1], dados[2], dados[3], dados[4], dados[5], dados[8], dados[9], dados[10], dados[11], dados[7], dados[13], dados[17]));
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(T6.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
                     Logger.getLogger(T6.class.getName()).log(Level.SEVERE, null, ex);
                 }
             });
-            return row ;
-        });
-        
-        //MenusItem
-        menuItem[0].setOnAction(new EventHandler<ActionEvent>() { //Reload
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    downloadTabela(table);
-                    carregaTabela(table);
-                } catch (IOException ex) {
-                    Logger.getLogger(T6.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-        menuItem[1].setOnAction(new EventHandler<ActionEvent>() { //Source
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("cheguei");
-            }
-        });
-        menuItem[2].setOnAction(new EventHandler<ActionEvent>() { //Exit
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("cheguei");
-            }
+            return row;
         });
 
+        //MenusItem
+        menuItem[0].setOnAction((ActionEvent event) -> { //Reload
+            try {
+                downloadTabela();
+                carregaTabela(table, true);
+            } catch (IOException ex) {
+                Logger.getLogger(T6.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        menuItem[1].setOnAction((ActionEvent event) -> { //Source
+            System.out.println("cheguei");
+        });
+        menuItem[2].setOnAction((ActionEvent event) -> { //Exit
+            System.exit(0);
+        });
+        menuItemAbout.setOnAction(((event) -> { //About
+            new Alert(Alert.AlertType.INFORMATION, "Visualizador de dados Enade\nDesenvolvido por: Daniel Seitenfus").show();
+        }));
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-    
+
     private void abreTelaInfos(Stage primaryStage, Questao questao) throws FileNotFoundException, MalformedURLException, IOException {
         FlowPane flowPaneGeral = new FlowPane(Orientation.HORIZONTAL);
-        FlowPane flowPane = new FlowPane(Orientation.VERTICAL); 
+        FlowPane flowPane = new FlowPane(Orientation.VERTICAL);
         flowPaneGeral.getChildren().add(flowPane);
         Label label[] = {
             new Label("Ano:"),
@@ -163,36 +144,38 @@ public class T6 extends Application {
             new Label("Acertos Dif. (Curso-Brasil):"),
             new Label(questao.getAcertosdif().getValue()),
             new Label("Gabarito:"),
-            new Label(questao.getGabarito().getValue()),
+            new Label(questao.getGabarito().getValue())
         };
         flowPane.getChildren().addAll(label);
-  
-        if(!questao.getUrlcop().equals("")){ 
-            File file = new File("C:\\Users\\danie\\Desktop\\UFSM\\t6\\src\\imagens\\"+questao.getIdquestao().getValue()+questao.getAno().getValue()+".jpg");
-            if(!file.exists()){ //se o arquivo não existir, faz o download
+
+        if (!questao.getUrlcop().equals("")) {
+            File file = new File("./src/imagens/" + questao.getIdquestao().getValue() + questao.getAno().getValue() + ".jpg");
+            if (!file.exists()) { //se o arquivo não existir, faz o download
                 InputStream in = new URL(questao.getUrlcop()).openStream();
                 Files.copy(in, Paths.get(file.getPath()), StandardCopyOption.REPLACE_EXISTING);
             }
-            
             Image image = new Image(new FileInputStream(file));
             flowPaneGeral.getChildren().add(new ImageView(image));
-        }else{
+        } else {
             flowPaneGeral.getChildren().add(new Label("Não há imagem."));
         }
-        
-        // New window (Stage)
         Stage newWindow = new Stage();
         newWindow.setTitle("Informações");
         newWindow.setScene(new Scene(flowPaneGeral));
+        newWindow.setHeight(500);
+        newWindow.setWidth(800);
 
-        // Set position of second window, related to primary window.
-        newWindow.setX(primaryStage.getX() + 200);
-        newWindow.setY(primaryStage.getY() + 100);
+        newWindow.setX(primaryStage.getX() + 100);
+        newWindow.setY(primaryStage.getY() + 50);
 
         newWindow.show();
     }
-    
-    private void carregaTabela(TableView table) throws FileNotFoundException, IOException{
+
+    private void carregaTabela(TableView table, boolean recarregar) throws FileNotFoundException, IOException {
+        if(recarregar){
+            table.getItems().clear();
+            table.getColumns().clear();
+        }
         TableColumn[] tableColumns = {
             new TableColumn("Ano"),
             new TableColumn("Prova"),
@@ -202,21 +185,19 @@ public class T6 extends Application {
             new TableColumn("Acertos Curso"),
             new TableColumn("Acertos Região"),
             new TableColumn("Acertos Brasil"),
-            new TableColumn("Dif. (Curso-Brasil)"),
-        };
+            new TableColumn("Dif. (Curso-Brasil)"),};
         table.getColumns().addAll(Arrays.asList(tableColumns));
-        File file = new File("C:\\Users\\danie\\Desktop\\UFSM\\t6\\src\\t6\\enade.csv");
-        if(!file.exists()){
-            downloadTabela(table);
+
+        File file = new File("./src/t6/enade.csv");
+        if (!file.exists()) {
+            downloadTabela();
         }
         this.lista = new CSVReaderHeaderAware(new FileReader(file)).readAll();
-        ObservableList<Questao> data= FXCollections.observableArrayList();
+        ObservableList<Questao> data = FXCollections.observableArrayList();
         for (String[] dados : lista) {
-            data.add(new Questao(dados[1],dados[2],dados[3],dados[4],dados[5],dados[8],dados[9],dados[10],dados[11]));
+            data.add(new Questao(dados[1], dados[2], dados[3], dados[4], dados[5], dados[8], dados[9], dados[10], dados[11]));
         }
-        //String ano, String prova, String tipoquestao, String idquestao, String objeto, String acertoscurso, String acertosregiao, String acertosbrasil, String acertosdif
-        // curso,ano,prova,tipoquestao,idquestao,objeto,objetodetalhado,gabarito,acertoscurso,acertosregiao,acertosbrasil,acertosdif,texto,imagem,urlprova,urlsintese,urlcurso,urlcrop
-        //  1    2    3      4          5         6          7            8         9           10             11              12     13     14       15      16       17        18
+        
         tableColumns[0].setCellValueFactory(new PropertyValueFactory("ano"));
         tableColumns[1].setCellValueFactory(new PropertyValueFactory("prova"));
         tableColumns[2].setCellValueFactory(new PropertyValueFactory("tipoquestao"));
@@ -226,17 +207,22 @@ public class T6 extends Application {
         tableColumns[6].setCellValueFactory(new PropertyValueFactory("acertosregiao"));
         tableColumns[7].setCellValueFactory(new PropertyValueFactory("acertosbrasil"));
         tableColumns[8].setCellValueFactory(new PropertyValueFactory("acertosdif"));
-        table.setItems(data);   
+        table.setItems(data);
+
     }
-    private void downloadTabela(TableView table) throws MalformedURLException, IOException{
+
+    private void downloadTabela() throws MalformedURLException, IOException {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION, "Baixando tabela...");
+        alerta.show();
         String url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTO06Jdr3J1kPYoTPRkdUaq8XuslvSD5--FPMht-ilVBT1gExJXDPTiX0P3FsrxV5VKUZJrIUtH1wvN/pub?gid=0&single=true&output=csv";
+        System.out.println("Download...");
         InputStream in = new URL(url).openStream();
-        String pathArquivo = "C:\\Users\\danie\\Desktop\\UFSM\\t6\\src\\t6\\enade.csv";
+        String pathArquivo = "./src/t6/enade.csv";
         File file = new File(pathArquivo);
-        if(file.exists()){
-            System.out.println("deletar");
+        if (file.exists()) {
             file.delete();
         }
         Files.copy(in, Paths.get(pathArquivo), StandardCopyOption.REPLACE_EXISTING);
+        alerta.close();
     }
 }
