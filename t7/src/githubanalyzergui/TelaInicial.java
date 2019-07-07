@@ -8,16 +8,18 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class TelaInicial extends javax.swing.JFrame {
 
     DefaultTableModel model;
-    ArrayList<Object> lista;
-
+    ArrayList<Repositorio> listaRepositorios;
     public TelaInicial() {
         initComponents();
         model = (DefaultTableModel) jTable1.getModel();
+        listaRepositorios = new ArrayList<>();
     }
 
     @SuppressWarnings("unchecked")
@@ -122,7 +124,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         JFileChooser jFileChooser = new JFileChooser();
         jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -131,10 +133,11 @@ public class TelaInicial extends javax.swing.JFrame {
             System.out.println("Nenhum selecionado");
         } else {
             try {
+                ArrayList<Object> lista=new ArrayList<>();
                 BufferedReader reader = new BufferedReader(new FileReader(jFileChooser.getSelectedFile()));
-                lista = new ArrayList<>();
                 String linha;
                 while ((linha = reader.readLine()) != null) {
+                    listaRepositorios.add(new Repositorio(linha));
                     lista.add((Object) linha);
                 }
                 model.addRow(lista.toArray());
@@ -151,7 +154,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        new CommitAnalyzer().setVisible(true);
+        new CommitAnalyzer(listaRepositorios).setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
