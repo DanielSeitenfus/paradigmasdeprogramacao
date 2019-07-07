@@ -8,12 +8,10 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class TelaInicial extends javax.swing.JFrame {
-
     DefaultTableModel model;
     ArrayList<Repositorio> listaRepositorios;
     public TelaInicial() {
@@ -99,6 +97,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu3.setText("Help");
 
         jMenuItem4.setText("About");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         jMenuBar1.add(jMenu3);
@@ -138,9 +141,8 @@ public class TelaInicial extends javax.swing.JFrame {
                 String linha;
                 while ((linha = reader.readLine()) != null) {
                     listaRepositorios.add(new Repositorio(linha));
-                    lista.add((Object) linha);
+                    model.addRow(new Object[]{linha});
                 }
-                model.addRow(lista.toArray());
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
@@ -156,6 +158,10 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         new CommitAnalyzer(listaRepositorios).setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Analisador de repositórios do GitHub\nDesenvolvedor: Daniel Seitenfus");
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

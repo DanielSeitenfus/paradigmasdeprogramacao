@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class CommitAnalyzer extends javax.swing.JFrame {
@@ -23,7 +22,7 @@ public class CommitAnalyzer extends javax.swing.JFrame {
     public CommitAnalyzer(ArrayList<Repositorio> listaRepositorios) {
         this.listaRepositorios = listaRepositorios;
         initComponents();
-        
+        this.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         Thread thread = new Thread(() -> {
             try {
                 DefaultTableModel model = (DefaultTableModel) jTRepositorios.getModel();
@@ -34,7 +33,7 @@ public class CommitAnalyzer extends javax.swing.JFrame {
                         //model.addRow(new Object[]{commit.getAuthor(), commit.getMessage(), commit.getDate()});
                         contPalavras+=commit.getMessage().length();
                     }
-                    model.addRow(new Object[]{repositorio.getName(),""+repositorio.getListaCommits().size(),""+contPalavras/repositorio.getListaCommits().size()});;
+                    model.addRow(new Object[]{repositorio.getName()+"/"+repositorio.getUrl(),""+repositorio.getListaCommits().size(),""+contPalavras/repositorio.getListaCommits().size()});;
                     jLabel1.setText("");
                 }
                 
@@ -46,6 +45,7 @@ public class CommitAnalyzer extends javax.swing.JFrame {
         
         jTRepositorios.getSelectionModel().addListSelectionListener((ListSelectionEvent e) -> {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setNumRows(0);
             Repositorio repositorio = listaRepositorios.get(jTRepositorios.getSelectedRow());
             for(Commit commit : repositorio.getListaCommits()){
                 model.addRow(new Object[]{commit.getAuthor(), commit.getMessage(), commit.getDate()});
@@ -161,7 +161,7 @@ public class CommitAnalyzer extends javax.swing.JFrame {
     public void buscaCommits(Repositorio repositorio) throws MalformedURLException, IOException {
         int page=1;
         BufferedReader in;
-        boolean busca;
+        boolean busca;;
         do{
             String urlstr = repositorio.getUrl()+"/commits?page="+page;
             page++;
@@ -174,7 +174,7 @@ public class CommitAnalyzer extends javax.swing.JFrame {
             in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
             // Response header (includes pagination links)
-            System.out.println(con.getHeaderFields().get("Link").get(0));
+           System.out.println(con.getHeaderFields().get("Link").get(0));
 
             // Parse a nested JSON response using Gson
             JsonParser parser = new JsonParser();
@@ -187,7 +187,7 @@ public class CommitAnalyzer extends javax.swing.JFrame {
                 String message=gson.toJson(e.getAsJsonObject().get("commit").getAsJsonObject().get("message"));
                 String date=gson.toJson(e.getAsJsonObject().get("commit").getAsJsonObject().get("author").getAsJsonObject().get("date"));
                 String author=gson.toJson(e.getAsJsonObject().get("commit").getAsJsonObject().get("author").getAsJsonObject().get("name"));
-                System.out.println(message);
+                //System.out.println(message);
                 Commit commit = new Commit(message, date, author);
                 repositorio.getListaCommits().add(commit);
             }  

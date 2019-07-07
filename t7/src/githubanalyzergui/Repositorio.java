@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author danie
  */
 public class Repositorio {
+    private String user;
     private String name;
     private String url;
     private ArrayList<Commit> listaCommits;
@@ -20,7 +21,16 @@ public class Repositorio {
         this.url = url;
         listaCommits = new ArrayList<>();
         String split[] = url.split("/");
+        user = split[3];
         name = split[4];
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getName() {

@@ -1,0 +1,2 @@
+https://api.github.com/repos/DanielSeitenfus/paradigmasdeprogramacao
+https://api.github.com/repos/DanielSeitenfus/mips_simulator
