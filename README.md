@@ -1,7 +1,4 @@
-# paradigmas-de-programacao
-Repositório para a disciplina de Paradigmas de Programação
-
-# T1
+# T1: Programação funcional em Haskell
 ## Funções
 
 1. Crie uma função `isVowel :: Char -> Bool` que verifique se um caracter é uma vogal ou não.
@@ -77,6 +74,8 @@ Repositório para a disciplina de Paradigmas de Programação
     ["palavras..","paralelas.","pedal.....","paralelepi"]
     ```
 
+
+
 # T2: Geração de SVG em Haskell
 
 Neste trabalho, você vai criar um programa em Haskell para gerar arquivos em formato SVG com formas geométricas coloridas, dispostas em alguns padrões.
@@ -104,6 +103,8 @@ As figuras que você vai gerar não precisam ser idênticas aos casos acima, mas
 - Relembre como se faz a conversão de graus para radianos.
 - Haskell tem a constante `pi` pré-definida.
 - Relembre o que você já estudou sobre as equações paramétricas da circunferência.
+
+
 
 # T3: Programação lógica em Prolog
 
@@ -166,6 +167,8 @@ As figuras que você vai gerar não precisam ser idênticas aos casos acima, mas
     ```
     Obs.: O resultado acima significa 4 cédulas de 100, 0 de 50, 1 de 20, e assim por diante.
 
+
+
 # T4: Resolva um mistério em Prolog
 
 ## O Mistério
@@ -208,6 +211,8 @@ Algumas dicas:
     - Pode ter roubado a arma.
     - Pode ter roubado a chave.
     - Estava no apartamento no momento do crime.
+
+
 
 # T5: RandomPicker e suas duas UIs
 
@@ -252,6 +257,8 @@ Embora seja suficiente implementar 2 formas de embaralhamento, seu código dever
 
 Você já deve ter notado que códigos em Java costumam seguir convenções diferentes de C para nomes (de variáveis, de métodos, etc.) e para outros detalhes de "estilo" do código. Acostume-se com isso e procure seguir alguma convenção documentada, como por exemplo em: https://google.github.io/styleguide/javaguide.html (veja principalmente a seção 5, sobre Naming).
 
+
+
 # T6: ENADE UFSM Explorer em JavaFX
 
 ## Objetivo
@@ -278,7 +285,6 @@ O programa com interface gráfica deverá conter os seguintes **componentes**:
 
 O programa deverá tratar as diversas **exceções** que podem ocorrer, por exemplo caso o programa não consiga obter os dados por falha na rede, URL inválida, arquivo corrompido, etc. Para informar essas exceções ao usuário, você pode usar a classe [Alert](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Alert.html) do JavaFX.
 
-
 ## Personalizadas
 
 Você pode implementar extensões a este trabalho para ganhar pontos em atividades personalizadas! Lembre-se que as atividades personalizadas sobre POO e programação concorrente valem 20% da nota do bimestre.
@@ -287,7 +293,6 @@ Algumas ideias:
 - Implemente filtros para visualizar somente alguns dados da tabela. Por exemplo: filtrar por ano, por tipo de questão, etc.
 - Apresente gráficos ([JavaFX Charts](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/charts.htm)) com dados selecionados. Por exemplo, apresente um gráfico de barra comparando os percentuais de acerto do curso, da região e do Brasil para uma dada questão.
 - Implemente uma tarefa concorrente que faça download das imagens das questões e/ou dos arquivos das provas e relatórios (colunas O, P, Q, R).
-
 
 ## Coding Style
 
@@ -303,6 +308,8 @@ Você já deve ter notado que códigos em Java costumam seguir convenções dife
 
 - [Download a File from an URL in Java](https://www.baeldung.com/java-download-file)  
   Diversas formas de implementar o download de um arquivo em Java.
+
+
 
 # T7: Analisador de repositórios do GitHub
 
