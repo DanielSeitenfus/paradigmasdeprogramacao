@@ -1,10 +1,7 @@
 # paradigmas-de-programacao
 Repositório para a disciplina de Paradigmas de Programação
 
-# paradigmas-de-programacao
-Repositório para a disciplina de Paradigmas de Programação
-
-#T1
+# T1
 ## Funções
 
 1. Crie uma função `isVowel :: Char -> Bool` que verifique se um caracter é uma vogal ou não.
